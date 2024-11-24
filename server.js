@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = 3001;
+const port = 3002;
 const cors = require('cors');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
@@ -10,6 +10,10 @@ const products = require('./routes/products');
 const users = require('./routes/users');
 const orders = require('./routes/orders');
 const categories = require('./routes/categories');
+const path = require('path');
+
+
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 const errorhandler = require('./helpers/error_hendler');
 const API = process.env.API_URL ;

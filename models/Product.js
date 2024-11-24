@@ -30,11 +30,7 @@ const productDetailSchema = new mongoose.Schema({
 });
 
 const Productschema = new mongoose.Schema({
-    id:{
-        type :Number,
-        unique:true,
-        
-    },
+   
     name: {
         type: String,
         required: true 
@@ -111,7 +107,7 @@ Productschema.pre('save', async function (next) {
 });
 
 const validationproduct = Joi.object({
-    id: Joi.number(),
+    
     name: Joi.string().required(),
     description: Joi.string().required(),
     richDescription: Joi.string().trim().min(3).max(200).required(),
@@ -135,7 +131,7 @@ const validationproduct = Joi.object({
     ).optional()  
 });
 const validationupdate = Joi.object({
-    id: Joi.number().optional(),
+  
     name: Joi.string().optional(),
     description: Joi.string().optional(),
     richDescription: Joi.string().trim().min(3).max(200).optional(),

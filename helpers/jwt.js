@@ -13,6 +13,8 @@ function auth_jwt() {
             { url: /\/StoreAPI\/users/, methods: ['POST'] },
             
             { url: /\/StoreAPI\/products/, methods: ['GET'] },
+            { url: /\/StoreAPI\/products/, methods: ['POST'] },
+
             { url: /\/StoreAPI\/products/, methods: ['DELETE'] },
 
 
