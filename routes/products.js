@@ -13,7 +13,7 @@ const upload = multer({ dest: 'uploads/' }); // Set up the folder for file stora
  * @access public
  */
 router.get('/GetALLProducts', async (req, res) => {
-    const Productlist = await Product.find().populate('category', 'name -_id');
+    const Productlist = await Product.find()
     if (!Productlist) {
         return res.status(500).json({ success: false });
     }
